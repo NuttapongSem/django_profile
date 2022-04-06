@@ -1,0 +1,50 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="main">
+        <div class="col-2 col-md-1"></div>
+        <div class="col-6 col-md-5">
+            <h2>Hi , I 'am Sem <br><span>Nuttapong Inphinit</span></h2>
+            <h3>Developer</h3>
+            <h4>Developer</h4>
+            {% comment %} <a href="project.html" class="btn">My works</a> {% endcomment %}
+        </div>
+        <div class="col-6 col-md-2"></div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'image_profile/S__3661826.png' %}" alt="" width="600px">
+        </div>
+    </section>
+    <section class="cards" >
+        <h2 class="main-title">My Skills</h2>
+        <div class="content">
+            <div class="col-2 card">
+                <div class="icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div class="info">
+                    <h3 style="text-align: center">Normal</h3>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 class="main-title">Contact Us</h2>
+            <div class="content">
+                <div class="card2">
+                    <div class="icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <div class="info">
+                        <h3>Email</h3>
+                        <p><i class="bi bi-envelope"></i> : nattapong.sem@gmail.com</p>
+                        <h3>Tell.</h3>
+                        <p><i class="bi bi-telephone"></i> : 095-3193444</p>
+                        <h3>Facebook :
+                            <a href="https://web.facebook.com/nuttpong.inpinit"><i class="fa-brands fa-facebook"
+                                                                                   style="font-size: 35px"></i></a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
