@@ -1,0 +1,40 @@
+{% extends 'components/base.html' %}
+{% block content %}
+    <div class="container" style="padding-top: 10%">
+        <form action="{% url 'abouts' %}" method="post">
+            {% csrf_token %}
+            <h2>My Skills</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="first">Skill Name</label>
+                        <input type="text" class="form-control" placeholder="" id="first" name="skill_name">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-top: 30px">Submit</button>
+        </form>
+        <div style="padding-top:10px ">
+            <h2>My Skills</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Skill Name</th>
+                    <th scope="col">Deleted</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for skill in skills %}
+                    <tr>
+                        <td>{{ skill.name_skill }}</td>
+                        <td>
+                            <a href="{% url 'delete-skill' skill.id %}" type="button" class="btn btn-danger">ลบ</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+{% endblock %}

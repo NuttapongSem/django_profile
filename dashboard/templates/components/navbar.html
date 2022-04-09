@@ -2,7 +2,15 @@
     <span class="logo">My Profile</span>
 
     <nav class="navigation">
-        <a href="/">Home</a>
-        <a href="/about">About Me</a>
+        {% url 'dashboard' as my_view %}
+        {% if request.path == my_view %}
+            <a href="/">Home</a>
+            <a href="abouts">About Me</a>
+        {% endif %}
+        {% url 'abouts' as my_view %}
+        {% if request.path == my_view %}
+            <a href="/">Home</a>
+            <a href="abouts" hidden>About Me</a>
+        {% endif %}
     </nav>
 </header>
